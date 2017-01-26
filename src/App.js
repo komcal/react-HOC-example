@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Increment, Decrease } from './Calculate'
+import CalculateWrapper from './CalculateWrapper'
 
 class App extends Component {
   render() {
+    const CalculateIncrement = CalculateWrapper(Increment)
+    const CalculateDecrease = CalculateWrapper(Decrease)
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <CalculateIncrement x={10} y={20} operation={'+'}/>
+        <CalculateDecrease x={10} y={20} operation={'-'}/>
       </div>
     );
   }
